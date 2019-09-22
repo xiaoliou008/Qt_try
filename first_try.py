@@ -8,7 +8,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from PyQt5.QtWebEngine import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -22,9 +22,6 @@ class Ui_MainWindow(object):
         self.checkBox = QtWidgets.QCheckBox(self.centralwidget)
         self.checkBox.setGeometry(QtCore.QRect(130, 250, 71, 16))
         self.checkBox.setObjectName("checkBox")
-        self.calendarWidget = QtWidgets.QCalendarWidget(self.centralwidget)
-        self.calendarWidget.setGeometry(QtCore.QRect(250, 310, 248, 197))
-        self.calendarWidget.setObjectName("calendarWidget")
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(210, 130, 330, 80))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
@@ -43,6 +40,11 @@ class Ui_MainWindow(object):
         self.pushButton_3 = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.pushButton_3.setObjectName("pushButton_3")
         self.horizontalLayout.addWidget(self.pushButton_3)
+        # self.webEngineView = QtWebEngineWidgets.QWebEngineView(self.centralwidget)
+        self.webEngineView = QWebEngineView(self.centralwidget)
+        self.webEngineView.setGeometry(QtCore.QRect(60, 320, 300, 200))
+        self.webEngineView.setUrl(QtCore.QUrl("https://www.baidu.com/"))
+        self.webEngineView.setObjectName("webEngineView")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 23))
@@ -64,3 +66,6 @@ class Ui_MainWindow(object):
         self.pushButton_2.setText(_translate("MainWindow", "PushButton"))
         self.radioButton.setText(_translate("MainWindow", "RadioButton"))
         self.pushButton_3.setText(_translate("MainWindow", "PushButton"))
+
+# from PyQt5 import QtWebEngineWidgets
+
